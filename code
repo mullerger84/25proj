@@ -1,3 +1,4 @@
+#스택 정의
 class Stack :
     def __init__(self) :
         self.items = [1,1,1,1,1,1]
@@ -15,24 +16,24 @@ class Stack :
 s= Stack()
 
 
-print('파스코의 대여,반납,현황확인 중 원하는 것을 입력해주세요')
+print('파스코의 대여,반납,현황확인 중 원하는 것을 입력해주세요') #대여, 반납, 현황확인 중 선택
 a = input()
 def check(a) :
     for i in a :
-        if i in '대여' :
+        if i in '대여' :  #대여
             print('대여 할 사람의 이름 적어주세요.')  
             b = input()
             if not s.isEmpty() :
                 s.pop()
             print('현재 남은 물품 수는', s.size(), ' 개 입니다.')
             break
-        elif i in '반납' :
+        elif i in '반납' :  #반납
             s.push(1)
             print('반납할 사람의 이름을 적어주세요')
             c = input()
             print('현재 남은 물품 수는',s.size(),' 개 입니다.')
             break
-        elif i in '현황확인' :
+        elif i in '현황확인' :  #현황확인
             print('현재 남은 물품 수는',s.size(), '개 입니다.')
             break
     if s.isEmpty() :
