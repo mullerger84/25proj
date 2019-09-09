@@ -1,6 +1,6 @@
 class Stack :
     def __init__(self) :
-        self.items = [1,1,1,1,1,1]
+        self.items = []
     def push(self,items) :
         self.items.append(items)
     def pop(self) :
@@ -12,11 +12,8 @@ class Stack :
             return False
     def size(self) :
         return len(self.items)       
-s= Stack()
 
-
-print('파스코의 대여,반납,현황확인 중 원하는 것을 입력해주세요')
-a = input()
+s = Stack()
 def check(a) :
     for i in a :
         if i in '대여' :
@@ -40,7 +37,29 @@ def check(a) :
     else :
         return False
     return
-if check(a) :
-    print('남은 물품의 수가 없습니다.')
-else :
-    print('작업이 완료되었습니다!')
+
+p = [1,1,1,1]
+t = [1,1,1,1,1,1]
+print("대여,반납,현황확인 중 하나를 하고 싶은 물품을 선택해주세요")
+d = input()
+
+if d in '파스코':
+    print('파스코의 대여,반납,현황확인 중 원하는 것을 입력해주세요')
+    a = input()
+    for i in p:
+        s.push(p)
+    if check(a) :
+        print('남은 물품의 수가 없습니다.')
+    else :
+        print('작업이 완료되었습니다!')
+    p = s.items
+if d in '압력센서':
+    print('압력센서의 대여,반납,현황확인 중 원하는 것을 입력해주세요')
+    a = input()
+    for i in t:
+        s.push(i)
+    if check(a) :
+        print('남은 물품의 수가 없습니다.')
+    else :
+        print('작업이 완료되었습니다!')
+    t = s.items
