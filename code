@@ -13,7 +13,7 @@ class Stack :
     def size(self) :
         return len(self.items)       
 s= Stack()
-
+m = []
 
 print('파스코의 대여,반납,현황확인 중 원하는 것을 입력해주세요')
 a = input()
@@ -22,6 +22,8 @@ def check(a) :
         if i in '대여' :
             print('대여 할 사람의 이름 적어주세요.')  
             b = input()
+            m.append(b)
+            print(m)
             if not s.isEmpty() :
                 s.pop()
             print('현재 남은 물품 수는', s.size(), ' 개 입니다.')
@@ -34,6 +36,8 @@ def check(a) :
             break
         elif i in '현황확인' :
             print('현재 남은 물품 수는',s.size(), '개 입니다.')
+            print('빌려간 사람은') 
+            print(m)
             break
     if s.isEmpty() :
         return True
@@ -42,5 +46,7 @@ def check(a) :
     return
 if check(a) :
     print('남은 물품의 수가 없습니다.')
+    print('빌려간 사람은')
+    print(m)
 else :
     print('작업이 완료되었습니다!')
