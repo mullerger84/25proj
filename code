@@ -15,26 +15,36 @@ class Stack :
 s= Stack()
 
 
-print('파스코의 대여,반납,현황확인 중 원하는 것을 입력해주세요')
+b = []
+
+
+print('파스코의 대여,반납,현황확인 중 원하는 것을 모두 입력해주세요')
 a = input()
 def check(a) :
-    for i in a :
-        if i in '대여' :
-            print('대여 할 사람의 이름 적어주세요.')  
-            b = input()
+    if '대여' in a :
+        b1 = input('대여하는 사람의 이름을 적어주세요.')
+        b.append(b1)
+        k1 = int(input('대여 개수를 입력해주세요.'))
+        for i in range(k1) :
             if not s.isEmpty() :
                 s.pop()
-            print('현재 남은 물품 수는', s.size(), ' 개 입니다.')
-            break
-        elif i in '반납' :
+            else :
+                yn = input('물품이 모두 소진되었습니다. 대여자 명단을 확인하시겠습니까? 예/아니오')
+                if yn == '예' :
+                    print(b)
+                else :
+                    break
+        print('현재 남은 물품 수는', s.size(), ' 개 입니다.')
+    if '반납' in a :
+        c1 = input('반납할 사람의 이름을 적어주세요.')
+        k2 = int(input('빌렸던 물품의 개수를 입력해주세요.'))
+        for i in range(k2) :
             s.push(1)
-            print('반납할 사람의 이름을 적어주세요')
-            c = input()
-            print('현재 남은 물품 수는',s.size(),' 개 입니다.')
-            break
-        elif i in '현황확인' :
-            print('현재 남은 물품 수는',s.size(), '개 입니다.')
-            break
+        b.remove(c1)
+        print('현재 남은 물품 수는',s.size(),' 개 입니다.')
+    if '현황확인' in a :
+        print('현재 남은 물품 수는',s.size(), '개 입니다.')
+
     if s.isEmpty() :
         return True
     else :
